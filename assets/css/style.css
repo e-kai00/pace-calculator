@@ -1,0 +1,36 @@
+
+html {
+    min-height: 100%;
+    position: relative;
+}
+
+body {
+    
+}
+
+header {
+    margin-left: 20px;
+}
+
+
+/* distance are */
+
+li {
+    list-style-type: none;
+    display: inline-block;
+    margin: 0 10px;
+}
+
+
+/* user choice area */
+
+
+/* splits area */
+
+
+.wrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+}
