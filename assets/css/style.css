@@ -8,12 +8,37 @@ body {
     
 }
 
-header {
-    margin-left: 20px;
+h2 {
+    font-size: 120%;
+}
+
+header p, header h1 {
+   margin-left: 2%;
+}
+
+.main-area {
+    width: 80%;
+    margin: 0 auto;
 }
 
 
-/* distance are */
+/* distance area */
+
+.distance-area {
+    display: flex;
+    flex-direction: row;    
+}
+
+.distance-area label, .distance-area ul {
+    align-self: center;
+}
+
+.distance-area label{
+    margin-left: 1%;
+}
+.distance-area input {
+    width: 70px;
+}
 
 li {
     list-style-type: none;
@@ -23,6 +48,20 @@ li {
 
 
 /* user choice area */
+
+.user-choice input {    
+    display: inline-block;                         /* code from  stackOverflow discussion */
+    width: 6em;
+    position: relative;
+    top: -3em;
+}  
+  
+.user-choice label {
+    display: inline-block;
+    width: 6em;
+    margin-right: .5em;
+    padding-top: 1.5em;
+  }
 
 
 /* splits area */
