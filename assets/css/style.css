@@ -40,12 +40,15 @@ header p, header h1 {
     width: 70px;
 }
 
-li {
+.distance-area li {
     list-style-type: none;
     display: inline-block;
     margin: 0 10px;
 }
-
+ 
+.active, .distance-item:hover {
+    background-color: aquamarine;
+}
 
 /* user choice area */
 
