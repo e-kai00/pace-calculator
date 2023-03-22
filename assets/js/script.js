@@ -11,16 +11,36 @@ document.addEventListener('DOMContentLoaded', function () {
             this.className += ' active';
         })
     }
-
-    // set chosen distance
-    for (item of distanceItems) {
-        item.addEventListener('click', function() {
-            if (this.getAttribute('data-distance') === 'input') {
-                alert('You chose input');
-            } else {
-                let setDistance = this.getAttribute('data-distance');
-                alert(`You chose ${setDistance} distance`)
-            }
-        })
-    }
+    document.getElementById("sec").addEventListener("keydown", function(event) {     // to modify later
+        if (event.key === "Enter") {
+            calculatePace();
+        }
+    })
 })
+
+let hrInput = document.getElementById('hr');
+let minInput = document.getElementById('min');
+let secInput = document.getElementById('sec');
+let distanceInput = document.getElementById('user-distance');
+let paceText = document.getElementById('pace-text');          // to remove later
+let pacePaceMin = document.getElementById('pace-min');
+let pacePaceSec = document.getElementById('pace-sec');
+
+
+function calculatePace() {                     
+    
+    let hr = parseFloat(hrInput.value);
+    let min = parseFloat(minInput.value);
+    let sec = parseFloat(secInput.value);
+    let distance = parseInt(distanceInput.value);
+
+    let totalMin = hr * 60 + min + sec / 60;
+    let pace = totalMin / (distance / 1000)   
+
+    let paceMin = Math.floor(pace)
+    let paceSec = Math.round((pace - paceMin) * 60);
+        
+    paceText.textContent = "You should run " + paceMin + ":" + paceSec     // to remove
+    pacePaceMin.value = paceMin;
+    pacePaceSec.value = paceSec;
+}

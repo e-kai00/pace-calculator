@@ -22,8 +22,8 @@
             <ul>
                 <li class="distance-item" data-distance="5">5k</li>
                 <li class="distance-item active" data-distance="10">10k</li>
-                <li class="distance-item" data-distance="21097">Half Marathon</li>
-                <li class="distance-item" data-distance="42195">Marathon</li>
+                <li class="distance-item" data-distance="half-marathon">Half Marathon</li>
+                <li class="distance-item" data-distance="marathon">Marathon</li>
             </ul>
             <label><input type="number" id="user-distance" class="distance-item" data-distance="input"> m</label>
         </div>
@@ -32,16 +32,17 @@
             <div class="user-choice">
                 <div>
                     <h2>Time result</h2>
-                    <label>hr <input type="number"></label>
-                    <label>min <input type="number"></label>
-                    <label>sec <input type="number"></label>
+                    <label>hr <input type="number" id="hr"></label>
+                    <label>min <input type="number" id="min"></label>
+                    <label>sec <input type="number" id="sec"></label>
                 </div>
                 <div>
                     <h2>Pace</h2>
-                    <label>min <input type="number"></label>
-                    <label>sec <input type="number"></label>
+                    <label>min <input type="number" id="pace-min"></label>
+                    <label>sec <input type="number" id="pace-sec"></label>
                 </div>
             </div>
+            <p id="pace-text"></p>          <!-- to remove later -->
             <div class="splits">
                 <h2>Distance-time split</h2>
                 <div>1000 m</div>
