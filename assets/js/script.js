@@ -11,7 +11,7 @@ let pacePaceSec = document.getElementById('pace-sec');
 document.addEventListener('DOMContentLoaded', function () {
     let distanceItems = document.getElementsByClassName('distance-item');
 
-    // change distance choice                 
+    // change distance choice (selector)                
     for (let item = 0; item < distanceItems.length; item++) {             // code from www.w3schools.com/, slightly modified   
         distanceItems[item].addEventListener('click', function () {
             let current = document.getElementsByClassName('active');
@@ -70,8 +70,16 @@ function calculateTimeResult() {
     let min = parseFloat(pacePaceMin.value);
     let sec = parseFloat(pacePaceSec.value);
     let distance = parseInt(distanceInput.value);
-    let totalMin = min + sec / 60;    
+    let totalMin = min *60 + sec;    
 
-    let timeResult = totalMin * (distance / 1000);
-    paceText.textContent = "You finish distance in " + timeResult                // to remove
+    let result = totalMin * (distance / 1000);
+
+    let timeHr = Math.floor(result / 3600);
+    let timeMin = Math.floor(result % 3600 / 60);
+    let timeSec = Math.floor(result % 60)
+    paceText.textContent = "You finish distance in " + timeHr + ":" + timeMin + ":" + timeSec;                // to remove
+
+    hrInput.value = timeHr;
+    minInput.value = timeMin;
+    secInput.value = timeSec;
 }
