@@ -1,10 +1,11 @@
-let userChoice = document.getElementsByClassName('choice-container')
 let hrInput = document.getElementById('hr');
 let minInput = document.getElementById('min');
 let secInput = document.getElementById('sec');
 let distanceInput = document.getElementById('user-distance');
 let pacePaceMin = document.getElementById('pace-min');
 let pacePaceSec = document.getElementById('pace-sec');
+let splitItems = document.getElementsByClassName('splits')
+let text = document.getElementById('split1')                   // to remove later
 
 
 // wait for the DOM finish loading
@@ -18,8 +19,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // change distances selector
     let distanceItems = document.getElementsByClassName('distance-item');
-                    
-    for (let item = 0; item < distanceItems.length; item++) {                   // code from www.w3schools.com/, slightly modified   
+
+    for (let item = 0; item < distanceItems.length; item++) { // code from www.w3schools.com/, slightly modified   
         distanceItems[item].addEventListener('click', function () {
             let current = document.getElementsByClassName('active');
             current[0].className = current[0].className.replace(' active', '');
@@ -31,13 +32,15 @@ document.addEventListener('DOMContentLoaded', function () {
     for (item of distanceItems) {
         item.addEventListener('click', function () {
             if (this.getAttribute('data-distance') === 'input') {
-                calculateTimeResult();                                           
+                calculateTimeResult();                                       // to fix it
             } else {
                 let setDistance = this.getAttribute('data-distance');
                 distanceInput.value = setDistance
             }
         })
-    }    
+    }
+
+    //calculateSplits()
 })
 
 
@@ -60,7 +63,7 @@ function calculatePace() {
     }
 
     pacePaceMin.value = paceMin;
-    pacePaceSec.value = paceSec;
+    pacePaceSec.value = paceSec;    
 }
 
 
@@ -76,8 +79,19 @@ function calculateTimeResult() {
     let timeHr = Math.floor(result / 3600);
     let timeMin = Math.floor(result % 3600 / 60);
     let timeSec = Math.floor(result % 60)
-    
+
     hrInput.value = timeHr;
     minInput.value = timeMin;
     secInput.value = timeSec;
+}
+
+function calculateSplits() {
+
+    let min = parseFloat(pacePaceMin.value);
+    let sec = parseFloat(pacePaceSec.value);
+    let totalMin = min + sec / 60;
+      
+
+    text.textContent = totalMin
+    
 }

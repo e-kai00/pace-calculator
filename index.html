@@ -17,7 +17,7 @@
     <div class="main-area">
         <div class="distance-area">
             <span>
-                <h2>Distance</h2>
+                <h2><i class="fa-solid fa-road"></i> Distance</h2>
             </span>
             <ul>
                 <li class="distance-item" data-distance="5000">5k</li>
@@ -31,28 +31,44 @@
         <div class="wrap">
             <div id="user-choice">
                 <div class="choice-container">       
-                    <h2>Time result</h2>
-                    <label>hr <input type="number" id="hr" class="user-choice-time" oninput="calculatePace()"></label>
-                    <label>min <input type="number" id="min" class="user-choice-time" oninput="calculatePace()"></label>
-                    <label>sec <input type="number" id="sec" class="user-choice-time" oninput="calculatePace()"></label>
+                    <h2><i class="fa-solid fa-flag-checkered"></i> Time result</h2>
+                    <label>hr <input type="number" id="hr" oninput="calculatePace()"></label>
+                    <label>min <input type="number" id="min" oninput="calculatePace()"></label>
+                    <label>sec <input type="number" id="sec" oninput="calculatePace()"></label>
                 </div>
                 <div class="choice-container">       
-                    <h2>Pace</h2>
-                    <label>min <input type="number" id="pace-min" class="user-choice-pace" oninput="calculateTimeResult()"></label>
-                    <label>sec <input type="number" id="pace-sec" class="user-choice-pace" oninput="calculateTimeResult()"></label>
+                    <h2><i class="fa-solid fa-stopwatch"></i> Pace</h2>
+                    <label>min <input type="number" id="pace-min" oninput="calculateTimeResult()"></label>
+                    <label>sec <input type="number" id="pace-sec" oninput="calculateTimeResult()"></label>
                 </div>
             </div>            
             <div class="splits">
                 <h2>Distance-time split</h2>
-                <div>1000 m</div>
-                <div>800 m</div>
-                <div>400 m</div>
-                <div>200 m</div>
-                <div>100 m</div>
+                <div>
+                    <span data-split="1">1000 m - </span>
+                    <span id="spit1"></span>
+                </div>
+                <div>
+                    <span data-split="0,8">800 m - </span>
+                    <span ></span>
+                </div>
+                <div>
+                    <span data-split="0,4">400 m - </span>
+                    <span ></span>
+                </div>
+                <div>
+                    <span data-split="0,2">200 m - </span>
+                    <span ></span>
+                </div>
+                <div>
+                    <span data-split="0,1">100 m - </span>
+                    <span></span>
+                </div>
             </div>
         </div>
     </div>
 
+    <script src="https://kit.fontawesome.com/624b5d3773.js" crossorigin="anonymous"></script>
     <script src="assets/js/script.js"></script>
 </body>
 

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans&display=swap');
+
 
 html {
     min-height: 100%;
@@ -5,7 +7,12 @@ html {
 }
 
 body {
-    
+    font-family: "Work Sans", sans-serif;
+}
+
+i {
+    color: brown;
+    font-size: 90%;
 }
 
 h2 {
