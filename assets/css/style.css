@@ -19,8 +19,17 @@ h2 {
     font-size: 120%;
 }
 
-header p, header h1 {
-   margin-left: 2%;
+header p,
+header h1 {
+    margin-left: 2%;
+}
+
+section {
+    background: url(../images/track.webp);
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    padding-top: 20px;
 }
 
 .main-area {
@@ -33,16 +42,19 @@ header p, header h1 {
 
 .distance-area {
     display: flex;
-    flex-direction: row;    
+    flex-direction: row;   
+    background-color: rgba(255, 255, 255, 0.8);    
 }
 
-.distance-area label, .distance-area ul {
+.distance-area label,
+.distance-area ul {
     align-self: center;
 }
 
-.distance-area label{
+.distance-area label {
     margin-left: 1%;
 }
+
 .distance-area input {
     width: 70px;
 }
@@ -50,28 +62,39 @@ header p, header h1 {
 .distance-area li {
     list-style-type: none;
     display: inline-block;
-    margin: 0 10px;
+    margin: 0 10px;    
 }
- 
-.active, .distance-item:hover {
-    background-color: aquamarine;
+
+.active,
+.distance-item:hover {
+    background-color: #3A5A7C;
+    transform: scale(1.1);
+    color: #ffffff;
+    padding: 0 10px;
+    
+
 }
+
 
 /* user choice area */
 
-#user-choice input {    
-    display: inline-block;                         /* code from  stackOverflow discussion */
+#user-choice input {                /* code from  stackOverflow discussion */ 
+    display: inline-block;                
     width: 6em;
     position: relative;
     top: -3em;
-}  
-  
+}
+
 #user-choice label {
     display: inline-block;
     width: 6em;
     margin-right: .5em;
     padding-top: 1.5em;
-  }
+}
+
+.wrap {
+    background-color: rgba(255, 255, 255, 0.8);
+}
 
 
 /* splits area */
