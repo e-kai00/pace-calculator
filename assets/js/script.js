@@ -4,8 +4,8 @@ let secInput = document.getElementById('sec');
 let distanceInput = document.getElementById('user-distance');
 let pacePaceMin = document.getElementById('pace-min');
 let pacePaceSec = document.getElementById('pace-sec');
-let splitItems = document.getElementsByClassName('splits')
-let text = document.getElementById('split1')                   // to remove later
+let splitItems = document.getElementsByClassName('split-class')
+ 
 
 
 // wait for the DOM finish loading
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
     for (item of distanceItems) {
         item.addEventListener('click', function () {
             if (this.getAttribute('data-distance') === 'input') {
-                calculateTimeResult();                                       // to fix it
+                calculateTimeResult(); // to fix it
             } else {
                 let setDistance = this.getAttribute('data-distance');
                 distanceInput.value = setDistance
@@ -40,7 +40,8 @@ document.addEventListener('DOMContentLoaded', function () {
         })
     }
 
-    //calculateSplits()
+    calculateSplits()
+
 })
 
 
@@ -63,7 +64,7 @@ function calculatePace() {
     }
 
     pacePaceMin.value = paceMin;
-    pacePaceSec.value = paceSec;    
+    pacePaceSec.value = paceSec;
 }
 
 
@@ -90,8 +91,25 @@ function calculateSplits() {
     let min = parseFloat(pacePaceMin.value);
     let sec = parseFloat(pacePaceSec.value);
     let totalMin = min + sec / 60;
-      
 
-    text.textContent = totalMin
     
+    let splitText1 = document.getElementById('split1')     // to fix convert in min:sec
+    let splitTime = totalMin * 1;
+    let minS = Math.floor(splitTime)
+    let secS = Math.round((splitTime - min) * 60)
+    splitText1.textContent = minS + ":" + secS
+
+    let splitText2 = document.getElementById('split2')
+    splitText2.textContent = (totalMin * 0.8).toFixed(2);
+
+    let splitText3 = document.getElementById('split3')
+    splitText3.textContent = totalMin * 0.4
+
+    let splitText4 = document.getElementById('split4')
+    splitText4.textContent = totalMin * 0.2
+
+    let splitText5 = document.getElementById('split5')
+    splitText5.textContent = totalMin * 0.1
+
+   
 }

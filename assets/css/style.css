@@ -68,11 +68,9 @@ section {
 .active,
 .distance-item:hover {
     background-color: #3A5A7C;
-    transform: scale(1.1);
+    
     color: #ffffff;
     padding: 0 10px;
-    
-
 }
 
 
