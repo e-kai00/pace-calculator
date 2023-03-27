@@ -5,7 +5,8 @@ let distanceInput = document.getElementById('user-distance');
 let pacePaceMin = document.getElementById('pace-min');
 let pacePaceSec = document.getElementById('pace-sec');
 let splitItems = document.getElementsByClassName('split-class')
- 
+let splitClassInsert = document.getElementsByClassName('split-class-insert')
+
 
 
 // wait for the DOM finish loading
@@ -31,17 +32,13 @@ document.addEventListener('DOMContentLoaded', function () {
     // set chosen distance
     for (item of distanceItems) {
         item.addEventListener('click', function () {
-            if (this.getAttribute('data-distance') === 'input') {
-                calculateTimeResult(); // to fix it
-            } else {
-                let setDistance = this.getAttribute('data-distance');
-                distanceInput.value = setDistance
-            }
+            let setDistance = this.getAttribute('data-distance');
+            distanceInput.value = setDistance
         })
     }
 
     calculateSplits()
-
+    
 })
 
 
@@ -86,30 +83,32 @@ function calculateTimeResult() {
     secInput.value = timeSec;
 }
 
+
 function calculateSplits() {
-
-    let min = parseFloat(pacePaceMin.value);
-    let sec = parseFloat(pacePaceSec.value);
-    let totalMin = min + sec / 60;
-
     
-    let splitText1 = document.getElementById('split1')     // to fix convert in min:sec
-    let splitTime = totalMin * 1;
-    let minS = Math.floor(splitTime)
-    let secS = Math.round((splitTime - min) * 60)
-    splitText1.textContent = minS + ":" + secS
+    let min = parseFloat(pacePaceMin.value);          // get pace data
+    let sec = parseFloat(pacePaceSec.value);
+    let totalMin = min + sec / 60;                       
 
-    let splitText2 = document.getElementById('split2')
-    splitText2.textContent = (totalMin * 0.8).toFixed(2);
-
-    let splitText3 = document.getElementById('split3')
-    splitText3.textContent = totalMin * 0.4
-
-    let splitText4 = document.getElementById('split4')
-    splitText4.textContent = totalMin * 0.2
-
-    let splitText5 = document.getElementById('split5')
-    splitText5.textContent = totalMin * 0.1
-
-   
+    let splitDist = [1, 0.8, 0.4, 0.2, 0.1]           // splits in meters
+    
+    let timeTimerContainer = []    
+       
+    for (let i = 0; i < splitDist.length; i++) {          // calculate time for each split
+        let time = splitDist[i] * totalMin
+        timeTime = ((((time - Math.floor(time)) *60) / 100) + Math.floor(time)).toFixed(2)   // decimals to min & sec
+        timeTimerContainer.push(timeTime)            
+    }
+    console.log(timeTimerContainer)    
+    
+    splitClassInsert[0].textContent = timeTimerContainer[0]
+    splitClassInsert[1].textContent = timeTimerContainer[1]
+    splitClassInsert[2].textContent = timeTimerContainer[2]
+    splitClassInsert[3].textContent = timeTimerContainer[3]
+    splitClassInsert[4].textContent = timeTimerContainer[4]
+     
 }
+
+
+
+

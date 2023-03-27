@@ -26,7 +26,7 @@
                 <li class="distance-item" data-distance="21097">Half Marathon</li>
                 <li class="distance-item" data-distance="42195">Marathon</li>
             </ul>
-            <label><input type="number" id="user-distance" class="distance-item" data-distance="input"> m</label>
+            <label><input type="number" id="user-distance" data-distance="input" oninput="calculateTimeResult()"> m</label>
         </div>
         <hr>
         <div class="wrap">
@@ -43,27 +43,27 @@
                     <label>sec <input type="number" id="pace-sec" oninput="calculateTimeResult()"></label>
                 </div>
             </div>            
-            <div class="splits">
+            <div id="splits">
                 <h2>Distance-time split</h2>
                 <div>
                     <span data-split="1" class="split-class">1000 m - </span>
-                    <p id="split1"></p>         
+                    <p class="split-class-insert"></p>         <!-- to modify later-->
                 </div>
                 <div>
                     <span data-split="0,8" class="split-class">800 m - </span>
-                    <p id="split2"></p>
+                    <p class="split-class-insert"></p>         <!-- to modify later-->
                 </div>
                 <div>
-                    <span data-split="0,4" class="split-class">400 m - </span>
-                    <p id="split3"></p>
+                    <span data-split="0,4" class="split-class">400 m - </span>             <!-- to modify later-->
+                    <p class="split-class-insert"></p>
                 </div>
                 <div>
                     <span data-split="0,2" class="split-class">200 m - </span>
-                    <p id="split4"></p>
+                    <p class="split-class-insert"></p>
                 </div>
                 <div>
                     <span data-split="0,1" class="split-class">100 m - </span>
-                    <p id="split5"></p>
+                    <p class="split-class-insert"></p>
                 </div>
             </div>
         </div>
