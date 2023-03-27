@@ -26,21 +26,21 @@
                 <li class="distance-item" data-distance="21097">Half Marathon</li>
                 <li class="distance-item" data-distance="42195">Marathon</li>
             </ul>
-            <label><input type="number" id="user-distance" data-distance="input" oninput="calculateTimeResult()"> m</label>
+            <label><input type="number" min="1" id="user-distance" data-distance="input" oninput="calculateTimeResult()"> m</label>
         </div>
         <hr>
         <div class="wrap">
             <div id="user-choice">
                 <div class="choice-container">       
                     <h2><i class="fa-solid fa-flag-checkered"></i> Time result</h2>
-                    <label>hr <input type="number" id="hr" oninput="calculatePace()"></label>
-                    <label>min <input type="number" id="min" oninput="calculatePace()"></label>
-                    <label>sec <input type="number" id="sec" oninput="calculatePace()"></label>
+                    <label>hr <input type="number" min="0" id="hr" oninput="calculatePace()"></label>
+                    <label>min <input type="number" min="0" max="59" id="min" oninput="calculatePace()"></label>
+                    <label>sec <input type="number" min="0" max="59" id="sec" oninput="calculatePace()"></label>
                 </div>
                 <div class="choice-container">       
                     <h2><i class="fa-solid fa-stopwatch"></i> Pace</h2>
-                    <label>min <input type="number" id="pace-min" oninput="calculateTimeResult()"></label>
-                    <label>sec <input type="number" id="pace-sec" oninput="calculateTimeResult()"></label>
+                    <label>min <input type="number" min="0" max="20" id="pace-min" oninput="calculateTimeResult()"></label>
+                    <label>sec <input type="number" min="0" max="59" id="pace-sec" oninput="calculateTimeResult()"></label>
                 </div>
             </div>            
             <div id="splits">
