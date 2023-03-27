@@ -10,6 +10,19 @@ body {
     font-family: "Work Sans", sans-serif;
 }
 
+header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;    
+}
+
+#logo {
+    width: 50px;
+    height: 50px;
+    margin-left: 2%;
+        
+}
+
 i {
     color: brown;
     font-size: 90%;
@@ -21,15 +34,15 @@ h2 {
 
 header p,
 header h1 {
-    margin-left: 2%;
-}
+    margin-left: 1%;
+}   
 
 section {
     background: url(../images/track.webp);
     background-size: cover;
     background-position: center;
     min-height: 100vh;
-    padding-top: 20px;
+    padding-top: 8%;
 }
 
 .main-area {
@@ -67,10 +80,9 @@ section {
 
 .active,
 .distance-item:hover {
-    background-color: #3A5A7C;
-    
+    background-color: #3A5A7C;    
     color: #ffffff;
-    padding: 0 10px;
+    padding: 0 7px;
 }
 
 
@@ -103,4 +115,19 @@ section {
     flex-direction: row;
     justify-content: space-around;
 
+}
+
+#splits > div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#splits p {
+    font-size: 90%;
+    font-style: oblique;
+}
+
+#splits span {
+    padding-right: 10px;
 }
