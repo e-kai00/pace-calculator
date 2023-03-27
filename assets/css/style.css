@@ -19,8 +19,7 @@ header {
 #logo {
     width: 50px;
     height: 50px;
-    margin-left: 2%;
-        
+    margin-left: 2%;        
 }
 
 i {
@@ -57,6 +56,10 @@ section {
     display: flex;
     flex-direction: row;   
     background-color: rgba(255, 255, 255, 0.8);    
+}
+
+.distance-area i {
+    margin-left: 5px;
 }
 
 .distance-area label,
@@ -109,18 +112,17 @@ section {
 
 /* splits area */
 
-
 .wrap {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-
 }
 
 #splits > div {
     display: flex;
     flex-direction: row;
     align-items: center;
+    border-bottom: 1px dotted black;
 }
 
 #splits p {
@@ -132,6 +134,8 @@ section {
     padding-right: 10px;
 }
 
+
+/* media queries */
 
 @media screen and (max-width: 770px) {
 
@@ -146,6 +150,7 @@ section {
         padding-bottom: 1%;
     }
 }
+
 
 @media screen and (max-width: 550px) {
 

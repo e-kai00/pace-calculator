@@ -33,45 +33,43 @@
             <div id="user-choice">
                 <div class="choice-container">       
                     <h2><i class="fa-solid fa-flag-checkered"></i> Time result</h2>
-                    <label>hr <input type="number" min="0" id="hr" oninput="calculatePace()"></label>
-                    <label>min <input type="number" min="0" max="59" id="min" oninput="calculatePace()"></label>
-                    <label>sec <input type="number" min="0" max="59" id="sec" oninput="calculatePace()"></label>
+                    <label>hr <input type="number" min="0" id="hr" oninput="calculatePace(); calculateSplits()"></label>
+                    <label>min <input type="number" min="0" max="59" id="min" oninput="calculatePace(); calculateSplits()"></label>
+                    <label>sec <input type="number" min="0" max="59" id="sec" oninput="calculatePace(); calculateSplits()"></label>
                 </div>
                 <div class="choice-container">       
                     <h2><i class="fa-solid fa-stopwatch"></i> Pace</h2>
-                    <label>min <input type="number" min="0" max="20" id="pace-min" oninput="calculateTimeResult()"></label>
-                    <label>sec <input type="number" min="0" max="59" id="pace-sec" oninput="calculateTimeResult()"></label>
+                    <label>min <input type="number" min="0" max="20" id="pace-min" oninput="calculateTimeResult(); calculateSplits()"></label>
+                    <label>sec <input type="number" min="0" max="59" id="pace-sec" oninput="calculateTimeResult(); calculateSplits()"></label>
                 </div>
             </div>            
             <div id="splits">
                 <h2>Splits time</h2>
                 <div>
-                    <span data-split="1" class="split-class">1000 m - </span>
-                    <p class="split-class-insert"></p>         <!-- to modify later-->
+                    <span class="split-class">1000 m - </span>
+                    <p class="split-class-insert"></p>        
                 </div>
                 <div>
-                    <span data-split="0,8" class="split-class">800 m - </span>
-                    <p class="split-class-insert"></p>         <!-- to modify later-->
+                    <span class="split-class">800 m - </span>
+                    <p class="split-class-insert"></p>         
                 </div>
                 <div>
-                    <span data-split="0,4" class="split-class">400 m - </span>             <!-- to modify later-->
+                    <span class="split-class">400 m - </span>             
                     <p class="split-class-insert"></p>
                 </div>
                 <div>
-                    <span data-split="0,2" class="split-class">200 m - </span>
+                    <span class="split-class">200 m - </span>
                     <p class="split-class-insert"></p>
                 </div>
                 <div>
-                    <span data-split="0,1" class="split-class">100 m - </span>
+                    <span class="split-class">100 m - </span>
                     <p class="split-class-insert"></p>
                 </div>
             </div>
         </div>
     </div>
     </section>
-
     <script src="https://kit.fontawesome.com/624b5d3773.js" crossorigin="anonymous"></script>
     <script src="assets/js/script.js"></script>
 </body>
-
 </html>

@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // change distances selector
     let distanceItems = document.getElementsByClassName('distance-item');
 
-    for (let item = 0; item < distanceItems.length; item++) { // code from www.w3schools.com/, slightly modified   
+    for (let item = 0; item < distanceItems.length; item++) {              // code from www.w3schools.com, slightly modified   
         distanceItems[item].addEventListener('click', function () {
             let current = document.getElementsByClassName('active');
             current[0].className = current[0].className.replace(' active', '');
@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
         })
     }
 
-    // set chosen distance
+    // set distance
     for (item of distanceItems) {
         item.addEventListener('click', function () {
             let setDistance = this.getAttribute('data-distance');
@@ -37,6 +37,7 @@ document.addEventListener('DOMContentLoaded', function () {
         })
     }
 
+    
     calculateSplits()
     
 })
