@@ -131,3 +131,40 @@ section {
 #splits span {
     padding-right: 10px;
 }
+
+
+@media screen and (max-width: 770px) {
+
+    .wrap {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .distance-area {
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 1%;
+    }
+}
+
+@media screen and (max-width: 550px) {
+
+    #user-choice {
+        padding-left: 5%;
+    }
+
+    .distance-area > ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0;        
+    }
+
+    .distance-area li {
+        margin: 5px 0;
+    }
+
+    .distance-area h2 {
+        margin-bottom: 0;
+    }
+}
