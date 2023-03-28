@@ -175,3 +175,29 @@ section {
         margin-bottom: 0;
     }
 }
+
+@media screen and (max-width: 460px) {
+
+    #choice-container-id input {
+        width: 40px;
+        
+
+    }
+
+    #choice-container-id label {
+        width: 3em;
+    }
+}
+
+@media screen and (max-width: 310px) {
+
+    #choice-container-pace-id input {
+        width: 45px;
+    }
+
+    #choice-container-pace-id label {
+        width: 3em;
+       
+        
+    }
+}
