@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // change distances selector
     let distanceItems = document.getElementsByClassName('distance-item');
 
-    for (let item = 0; item < distanceItems.length; item++) {              // code from www.w3schools.com, slightly modified   
+    for (let item = 0; item < distanceItems.length; item++) {              // code from www.w3schools.com   
         distanceItems[item].addEventListener('click', function () {
             let current = document.getElementsByClassName('active');
             current[0].className = current[0].className.replace(' active', '');
@@ -34,16 +34,17 @@ document.addEventListener('DOMContentLoaded', function () {
         item.addEventListener('click', function () {
             let setDistance = this.getAttribute('data-distance');
             distanceInput.value = setDistance
+            calculateTimeResult()
         })
     }
-
     
-    calculateSplits()
-    
+    calculateSplits()    
 })
 
 
-
+/**
+ *  Take in distance and time to calculate pace
+ */
 function calculatePace() {
 
     let hr = parseFloat(hrInput.value);
@@ -54,6 +55,7 @@ function calculatePace() {
     let totalMin = hr * 60 + min + sec / 60;
     let pace = totalMin / (distance / 1000)
 
+    // convert decimals to min & sec
     let paceMin = Math.floor(pace)
     let paceSec = Math.round((pace - paceMin) * 60);
 
@@ -66,15 +68,19 @@ function calculatePace() {
 }
 
 
+/**
+ * Take in distance and pace to calculate time result
+ */
 function calculateTimeResult() {
 
     let min = parseFloat(pacePaceMin.value);
     let sec = parseFloat(pacePaceSec.value);
     let distance = parseInt(distanceInput.value);
-    let totalMin = min * 60 + sec;
+    let totalSec = min * 60 + sec;
 
-    let result = totalMin * (distance / 1000);
+    let result = totalSec * (distance / 1000);
 
+    // convert decimals to hours, minutes, seconds
     let timeHr = Math.floor(result / 3600);
     let timeMin = Math.floor(result % 3600 / 60);
     let timeSec = Math.floor(result % 60)
@@ -85,29 +91,33 @@ function calculateTimeResult() {
 }
 
 
+/**
+ * Take in pace to calculate time for splits of
+ * 1000m, 800m, 400m, 200m and 100m
+ */
 function calculateSplits() {
     
-    let min = parseFloat(pacePaceMin.value);          // get pace data
+    let min = parseFloat(pacePaceMin.value);          
     let sec = parseFloat(pacePaceSec.value);
     let totalMin = min + sec / 60;                       
 
-    let splitDist = [1, 0.8, 0.4, 0.2, 0.1]           // splits in meters
+    let splitDist = [1, 0.8, 0.4, 0.2, 0.1]           
     
-    let timeTimerContainer = []    
-       
-    for (let i = 0; i < splitDist.length; i++) {          // calculate time for each split
+    // calculate time for each split
+    let timeTimerContainer = []   
+      
+    for (let i = 0; i < splitDist.length; i++) {          
         let time = splitDist[i] * totalMin
-        timeTime = ((((time - Math.floor(time)) *60) / 100) + Math.floor(time)).toFixed(2)   // decimals to min & sec
+        // convert decimals to min & sec 
+        timeTime = ((((time - Math.floor(time)) *60) / 100) + Math.floor(time)).toFixed(2)   
         timeTimerContainer.push(timeTime)            
-    }
-    console.log(timeTimerContainer)    
+    }    
     
     splitClassInsert[0].textContent = timeTimerContainer[0]
     splitClassInsert[1].textContent = timeTimerContainer[1]
     splitClassInsert[2].textContent = timeTimerContainer[2]
     splitClassInsert[3].textContent = timeTimerContainer[3]
-    splitClassInsert[4].textContent = timeTimerContainer[4]
-     
+    splitClassInsert[4].textContent = timeTimerContainer[4]     
 }
 
 

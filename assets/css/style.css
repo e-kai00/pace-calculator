@@ -124,6 +124,11 @@ section {
     align-items: center;
     border-bottom: 1px dotted black;
 }
+#splits-txt {
+    color: #4d4d4d;
+    font-size: 12px!important;
+    margin: 0;
+}
 
 #splits p {
     font-size: 90%;
