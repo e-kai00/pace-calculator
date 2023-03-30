@@ -123,7 +123,9 @@ The live link can be found here - [Running pace calculator](https://e-kai00.gith
 
     - Instruction on placing label text below input elements was taken from [StackOverflow](https://stackoverflow.com/questions/3463621)
 
-    - Ideas on converting time-decimals-time were taken from [StackOverflow](https://stackoverflow.com/questions/3733227) discussion
+    - Ideas on input validation were taken from [StackOverflow](https://stackoverflow.com/questions/56719160)
+
+    - Ideas on converting time-decimals-time were taken from [StackOverflow](https://stackoverflow.com/questions/3733227) discussions
 
 
 

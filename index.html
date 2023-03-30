@@ -27,21 +27,21 @@
                 <li class="distance-item" data-distance="21097">Half Marathon</li>
                 <li class="distance-item" data-distance="42195">Marathon</li>
             </ul>
-            <label><input type="number" min="1" id="user-distance" data-distance="input" oninput="calculateTimeResult()"> m</label>
+            <label><input type="number" min="1" max="350000" onkeyup="minMax(this)" id="user-distance" data-distance="input" oninput="calculateTimeResult()"> m</label>
         </div>
         <hr>
         <div class="wrap">
             <div id="user-choice">
                 <div class="choice-container" id="choice-container-id">       
                     <h2><i class="fa-solid fa-flag-checkered"></i> Time result</h2>
-                    <label>hr <input type="number" placeholder="0" min="0" id="hr" oninput="calculatePace(); calculateSplits()"></label>
-                    <label>min <input type="number" placeholder="0" min="0" max="59" id="min" oninput="calculatePace(); calculateSplits()"></label>
-                    <label>sec <input type="number" placeholder="0" min="0" max="59" id="sec" oninput="calculatePace(); calculateSplits()"></label>
+                    <label>hr <input type="number" min="0" max="200" onkeyup="minMax(this)"  id="hr" oninput="calculatePace(); calculateSplits()"></label>
+                    <label>min <input type="number"  min="0" max="59" onkeyup="minMax(this)" id="min" oninput="calculatePace(); calculateSplits()"></label>
+                    <label>sec <input type="number" min="0" max="59" onkeyup="minMax(this)" id="sec" oninput="calculatePace(); calculateSplits()"></label>
                 </div>
                 <div class="choice-container" id="choice-container-pace-id">       
                     <h2><i class="fa-solid fa-stopwatch"></i> Pace</h2>
-                    <label>min <input type="number" placeholder="0" min="0" max="20" id="pace-min" oninput="calculateTimeResult(); calculateSplits()"></label>
-                    <label>sec <input type="number" placeholder="0" min="0" max="59" id="pace-sec" oninput="calculateTimeResult(); calculateSplits()"></label>
+                    <label>min <input type="number" min="0" max="20" onkeyup="minMax(this)" id="pace-min" oninput="calculateTimeResult(); calculateSplits()"></label>
+                    <label>sec <input type="number" min="0" max="59" onkeyup="minMax(this)" id="pace-sec" oninput="calculateTimeResult(); calculateSplits()"></label>
                 </div>
             </div>            
             <div id="splits">

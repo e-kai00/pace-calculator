@@ -20,8 +20,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // change distances selector (code from www.w3schools.com)
     let distanceItems = document.getElementsByClassName('distance-item');
-    
-    for (let item = 0; item < distanceItems.length; item++) {                
+
+    for (let item = 0; item < distanceItems.length; item++) {
         distanceItems[item].addEventListener('click', function () {
             let current = document.getElementsByClassName('active');
             current[0].className = current[0].className.replace(' active', '');
@@ -37,8 +37,8 @@ document.addEventListener('DOMContentLoaded', function () {
             calculateTimeResult();
         })
     }
-    
-    calculateSplits();    
+
+    calculateSplits();
 })
 
 
@@ -96,31 +96,42 @@ function calculateTimeResult() {
  * 1000m, 800m, 400m, 200m and 100m
  */
 function calculateSplits() {
-    
-    let min = parseFloat(pacePaceMin.value);          
+
+    let min = parseFloat(pacePaceMin.value);
     let sec = parseFloat(pacePaceSec.value);
-    let totalMin = min + sec / 60;                       
+    let totalMin = min + sec / 60;
 
     let splitDist = [1, 0.8, 0.4, 0.2, 0.1];
 
     // calculate time for each split 
-    let timeTimerContainer = [];  
-    
-    for (let i = 0; i < splitDist.length; i++) {          
+    let timeTimerContainer = [];
+
+    for (let i = 0; i < splitDist.length; i++) {
         let time = splitDist[i] * totalMin;
         // convert decimals to min & sec 
-        timeTime = ((((time - Math.floor(time)) *60) / 100) + Math.floor(time)).toFixed(2);   
-        timeTimerContainer.push(timeTime);            
-    }        
-  
-   for (let s = 0; s < splitClassInsert.length; s++) {
-        splitClassInsert[s].textContent = timeTimerContainer[s]; 
+        timeTime = ((((time - Math.floor(time)) * 60) / 100) + Math.floor(time)).toFixed(2);
+        timeTimerContainer.push(timeTime);
+    }
+
+    for (let s = 0; s < splitClassInsert.length; s++) {
+        splitClassInsert[s].textContent = timeTimerContainer[s];
         if (splitClassInsert[s].textContent === "NaN") {
             splitClassInsert[s].textContent = 0;
-        }    
-   }
+        }
+    }
 }
-
-
-
-
+ 
+/**
+ * Check whether a number within the allowed range and 
+ * notify the user if a number is out of the range
+ */
+function minMax(inputs) {
+    if (parseInt(inputs.value) < parseInt(inputs.min)) {
+        inputs.value = inputs.min;
+        alert('Please enter a valid number between ' + inputs.min + ' and ' + inputs.max);
+    }
+    if (parseInt(inputs.value) > parseInt(inputs.max)) {
+        inputs.value = inputs.max;
+        alert('Please enter a valid number between ' + inputs.min + ' and ' + inputs.max);
+    }
+}
