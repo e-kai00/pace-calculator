@@ -103,9 +103,10 @@ function calculateSplits() {
 
     let splitDist = [1, 0.8, 0.4, 0.2, 0.1];           
     
-    // calculate time for each split
-    let timeTimerContainer = [];   
-      
+    
+    let timeTimerContainer = [];  
+
+    // calculate time for each split 
     for (let i = 0; i < splitDist.length; i++) {          
         let time = splitDist[i] * totalMin
         // convert decimals to min & sec 
@@ -113,11 +114,18 @@ function calculateSplits() {
         timeTimerContainer.push(timeTime);            
     }    
     
-    splitClassInsert[0].textContent = timeTimerContainer[0];
-    splitClassInsert[1].textContent = timeTimerContainer[1];
-    splitClassInsert[2].textContent = timeTimerContainer[2];
-    splitClassInsert[3].textContent = timeTimerContainer[3];
-    splitClassInsert[4].textContent = timeTimerContainer[4];     
+   // splitClassInsert[0].textContent = timeTimerContainer[0];
+   // splitClassInsert[1].textContent = timeTimerContainer[1];
+   // splitClassInsert[2].textContent = timeTimerContainer[2];
+   // splitClassInsert[3].textContent = timeTimerContainer[3];
+   // splitClassInsert[4].textContent = timeTimerContainer[4];     
+
+   for (let s = 0; s < splitClassInsert.length; s++) {
+        splitClassInsert[s].textContent = timeTimerContainer[s] 
+        if (splitClassInsert[s].textContent === "NaN") {
+            splitClassInsert[s].textContent = 0
+        }    
+   }
 }
 
 
