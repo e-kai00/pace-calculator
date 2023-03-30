@@ -18,10 +18,10 @@ document.addEventListener('DOMContentLoaded', function () {
     pacePaceSec.value = 25;
     calculateTimeResult();
 
-    // change distances selector
+    // change distances selector (code from www.w3schools.com)
     let distanceItems = document.getElementsByClassName('distance-item');
-
-    for (let item = 0; item < distanceItems.length; item++) {              // code from www.w3schools.com   
+    
+    for (let item = 0; item < distanceItems.length; item++) {                
         distanceItems[item].addEventListener('click', function () {
             let current = document.getElementsByClassName('active');
             current[0].className = current[0].className.replace(' active', '');
@@ -101,25 +101,18 @@ function calculateSplits() {
     let sec = parseFloat(pacePaceSec.value);
     let totalMin = min + sec / 60;                       
 
-    let splitDist = [1, 0.8, 0.4, 0.2, 0.1];           
-    
-    
-    let timeTimerContainer = [];  
+    let splitDist = [1, 0.8, 0.4, 0.2, 0.1];
 
     // calculate time for each split 
+    let timeTimerContainer = [];  
+    
     for (let i = 0; i < splitDist.length; i++) {          
         let time = splitDist[i] * totalMin
         // convert decimals to min & sec 
         timeTime = ((((time - Math.floor(time)) *60) / 100) + Math.floor(time)).toFixed(2)   
         timeTimerContainer.push(timeTime);            
-    }    
-    
-   // splitClassInsert[0].textContent = timeTimerContainer[0];
-   // splitClassInsert[1].textContent = timeTimerContainer[1];
-   // splitClassInsert[2].textContent = timeTimerContainer[2];
-   // splitClassInsert[3].textContent = timeTimerContainer[3];
-   // splitClassInsert[4].textContent = timeTimerContainer[4];     
-
+    }        
+  
    for (let s = 0; s < splitClassInsert.length; s++) {
         splitClassInsert[s].textContent = timeTimerContainer[s] 
         if (splitClassInsert[s].textContent === "NaN") {

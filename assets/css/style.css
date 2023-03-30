@@ -91,7 +91,7 @@ section {
 
 /* user choice area */
 
-#user-choice input {                /* code from  stackOverflow discussion */ 
+#user-choice input {               /* style from  stackOverflow discussion */  
     display: inline-block;                
     width: 6em;
     position: relative;
