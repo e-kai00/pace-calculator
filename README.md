@@ -81,9 +81,9 @@ The live link to the website - [Running pace calculator](https://e-kai00.github.
 
         - function with the largest signature take 0 arguments, while the median is 0.
 
-        - largest function has 14 statements in it, while the median is 10.
+        - largest function has 13 statements in it, while the median is 10.
 
-        - the most complex function has a cyclomatic complexity value of 3 while the median is 1.
+        - the most complex function has a cyclomatic complexity value of 4 while the median is 1.
 
 - Accessibility
     - I confirmed that the colors and fonts chosen are easy to read and accessible by running it through Lighthouse in DevTools

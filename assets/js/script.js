@@ -107,16 +107,16 @@ function calculateSplits() {
     let timeTimerContainer = [];  
     
     for (let i = 0; i < splitDist.length; i++) {          
-        let time = splitDist[i] * totalMin
+        let time = splitDist[i] * totalMin;
         // convert decimals to min & sec 
-        timeTime = ((((time - Math.floor(time)) *60) / 100) + Math.floor(time)).toFixed(2)   
+        timeTime = ((((time - Math.floor(time)) *60) / 100) + Math.floor(time)).toFixed(2);   
         timeTimerContainer.push(timeTime);            
     }        
   
    for (let s = 0; s < splitClassInsert.length; s++) {
-        splitClassInsert[s].textContent = timeTimerContainer[s] 
+        splitClassInsert[s].textContent = timeTimerContainer[s]; 
         if (splitClassInsert[s].textContent === "NaN") {
-            splitClassInsert[s].textContent = 0
+            splitClassInsert[s].textContent = 0;
         }    
    }
 }
