@@ -25,8 +25,8 @@ The live link to the website - [Running pace calculator](https://e-kai00.github.
 <br>
 
 - __The Distance section__
-  - allows the user to choose a distance either by selecting a predetermined distance of 5K, 10k, Half Marathon or Marathon, or by entering a custom distance;
-  - the user can set a custom distance in the distance box with a minimum value of 1 meter.
+  - allows the user to choose a distance either by selecting a predetermined distance of 5K, 10k, Half Marathon or Marathon, or by entering the custom distance;
+  - the user can set the custom distance in the distance box.
 
 <br>
 
@@ -61,7 +61,7 @@ The live link to the website - [Running pace calculator](https://e-kai00.github.
  
 - I confirmed that this project is responsive, looks good and functions on all standard screen sizes using the DevTools device toolbar.
 
-- I confirmed that the input fields work correctly: will only accept numbers with minimum value of 0, and maximum value of 59 for minutes and seconds fields.
+- I confirmed that the input fields work correctly: will only accept numbers within the set minimum and maximum values and notify the user if they enter a number out of the set range.
 
 <br>
 

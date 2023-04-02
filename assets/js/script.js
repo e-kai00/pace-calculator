@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 /**
- *  Take in distance and time to calculate pace
+ *  Use distance and time values to calculate pace
  */
 function calculatePace() {
 
@@ -69,7 +69,7 @@ function calculatePace() {
 
 
 /**
- * Take in distance and pace to calculate time result
+ * Use distance and pace values to calculate time result
  */
 function calculateTimeResult() {
 
@@ -92,7 +92,7 @@ function calculateTimeResult() {
 
 
 /**
- * Take in pace to calculate time for splits of
+ * Use pace to calculate time for splits of
  * 1000m, 800m, 400m, 200m and 100m
  */
 function calculateSplits() {
