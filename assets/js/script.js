@@ -127,11 +127,11 @@ function calculateSplits() {
  */
 function minMax(inputs) {
     if (parseInt(inputs.value) < parseInt(inputs.min)) {
-        inputs.value = inputs.min;
+        inputs.value = 0;
         alert('Please enter a valid number between ' + inputs.min + ' and ' + inputs.max);
     }
     if (parseInt(inputs.value) > parseInt(inputs.max)) {
-        inputs.value = inputs.max;
+        inputs.value = 0;
         alert('Please enter a valid number between ' + inputs.min + ' and ' + inputs.max);
     }
 }
